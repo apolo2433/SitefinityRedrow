@@ -1,0 +1,26 @@
+.pagination {
+	@include base-float;
+	border-bottom: 1px solid $grey-light;
+	border-top: 1px solid $grey-light;
+	padding: 25px 0 19px;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 9px;
+	}
+	.prev {
+		margin-right: 11px;
+		span {
+			margin-right: 4px;
+		}
+	}
+	.next {
+		margin-left: 11px;
+		span {
+			margin-left: 4px;
+		}
+	}
+	a:hover, .selected {
+		color: $red;
+	}
+}

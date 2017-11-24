@@ -1,0 +1,215 @@
+﻿<%@ Master %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<link href="favicon.ico" rel="icon" />
+	<title>Redrow</title>
+	<meta name="description" content="">
+	<meta name="robots" content="noindex">
+	<meta name="googlebot" content="noindex">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<asp:ContentPlaceHolder ID="cphAdditionalHead" runat="server" />
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="wrapper">
+				<button type="button" class="menu-trigger" aria-hidden="true"><span class="sr-only">Open mobile navigation</span></button>
+				<a href="/" class="logo">
+					<img src="img/logo.png" alt="Redrow" />
+				</a>
+				<div class="header-right" aria-haspopup="true">
+					<nav class="desktop-nav">
+						<ul role="menu" class="nav-first-level">
+							<li role="menuitem">
+								<a href="javascript:;">Our business</a>
+								<div class="nav-dropdown" aria-hidden="true">
+									<div class="wrapper">
+										<div class="nav-inner">
+											<div class="col col-image">
+												<img src="img/content/01.jpg" alt="Our business preview image" />
+											</div>
+											<div class="col">
+												<ul role="menu">
+													<li role="menuitem">
+														<a href="javascript:;">Highlights</a>
+													</li>
+													<li role="menuitem">
+														<a href="javascript:;">Our Investment Case</a>
+													</li>
+													<li role="menuitem">
+														<a href="javascript:;">Our Strategy</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col">
+												<ul role="menu">
+													<li role="menuitem">
+														<a href="javascript:;">A Better Way</a>
+													</li>
+													<li role="menuitem">
+														<a href="javascript:;">Our Business Model</a>
+													</li>
+													<li role="menuitem">
+														<a href="javascript:;">Our Markets</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col">
+												<ul role="menu">
+													<li role="menuitem">
+														<a href="javascript:;">Chairman’s Statement</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">Operating Review</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;" class="active">Financial Review</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">Corporate Governance</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">Download Centre</a>
+							</li>
+						</ul>
+					</nav>
+					<ul role="menu" class="header-actions">
+						<li role="menuitem">
+							<a href="javascript:;" download><span class="font-ico-download"></span>	<span class="sr-only">Download</span></a>
+						</li>
+						<li role="menuitem" class="share-item" aria-haspopup="true">
+							<button type="button"><span class="font-ico-share"></span> <span class="sr-only">Share</span></button>
+							<div class="share-wrap" aria-hidden="true">
+								<a href="javascript:;"><span class="zmdi zmdi-facebook"></span> <span class="sr-only">Share on Facebook</span></a>
+								<a href="javascript:;"><span class="zmdi zmdi-twitter"></span> <span class="sr-only">Share on Twitter</span></a>
+								<a href="javascript:;"><span class="zmdi zmdi-linkedin"></span> <span class="sr-only">Share on Linkedin</span></a>
+							</div>
+						</li>
+						<li role="menuitem" class="search-item">
+							<button type="button"><span class="font-ico-search"></span> <span class="sr-only">Open search popup</span></button>
+						</li>
+					</ul>
+					<div class="desktop-search-wrap" aria-hidden="true">
+						<div class="search-input-holder">
+							<label for="desktop-search" aria-hidden="true"><span class="sr-only">Search field</span></label>
+							<input type="text" id="desktop-search" placeholder="Search" />
+							<button type="submit"><span class="font-ico-search"></span> <span class="sr-only">Search</span></button>
+						</div>
+						<button type="button" class="close-search"><span class="font-ico-close-thin"></span> <span class="sr-only">Close search popup</span></button>
+					</div>
+				</div>
+			</div>
+			<nav class="device-nav" aria-hidden="true">
+				<ul role="menu">
+					<li role="menuitem">
+						<a href="javascript:;">About us</a>
+						<span class="nav-arrow" aria-hidden="true"><span class="zmdi zmdi-long-arrow-down"></span> <span class="sr-only">Show subitems</span></span>
+						<ul role="menu" aria-hidden="true">
+							<li role="menuitem">
+								<a href="javascript:;">Overview</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">Our strategy</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">Where we operate</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">Leadership team</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">History</a>
+							</li>
+						</ul>
+					</li>
+					<li role="menuitem">
+						<a href="javascript:;">Our brands</a>
+						<span class="nav-arrow" aria-hidden="true"><span class="zmdi zmdi-long-arrow-down"></span> <span class="sr-only">Show subitems</span></span>
+					</li>
+					<li role="menuitem">
+						<a href="javascript:;">Investors</a>
+						<span class="nav-arrow" aria-hidden="true"><span class="zmdi zmdi-long-arrow-down"></span> <span class="sr-only">Show subitems</span></span>
+						<ul role="menu" aria-hidden="true">
+							<li role="menuitem">
+								<a href="javascript:;">Leadership team</a>
+							</li>
+							<li role="menuitem">
+								<a href="javascript:;">History</a>
+							</li>
+						</ul>
+					</li>
+					<li role="menuitem">
+						<a href="javascript:;">News & media</a>
+						<span class="nav-arrow" aria-hidden="true"><span class="zmdi zmdi-long-arrow-down"></span> <span class="sr-only">Show subitems</span></span>
+					</li>
+					<li role="menuitem">
+						<a href="javascript:;">Contact us</a>
+						<span class="nav-arrow" aria-hidden="true"><span class="zmdi zmdi-long-arrow-down"></span> <span class="sr-only">Show subitems</span></span>
+					</li>
+				</ul>
+				<div class="device-search">
+					<label for="device-search" aria-hidden="true"><span class="sr-only">Device search</span></label>
+					<input type="text" placeholder="Search..." />
+					<button type="submit"><span class="zmdi zmdi-search"></span> <span class="sr-only">Search</span></button>
+				</div>
+			</nav>
+		</header>
+
+		<div class="content">
+			<asp:ContentPlaceHolder ID="cphContent" runat="server" />
+		</div>
+
+		<footer class="footer">
+			<div class="wrapper">
+				<div class="footer-links">
+					<a href="javascript:;" class="link-external">redrowplc.co.uk</a>
+					<div class="footer-social">
+						<a href="javascript:;"><span class="zmdi zmdi-twitter"></span> <span class="sr-only">Follow us on Twitter</span></a>
+						<a href="javascript:;"><span class="zmdi zmdi-linkedin-box"></span> <span class="sr-only">Follow us on Linkedin</span></a>
+						<a href="javascript:;"><span class="zmdi zmdi-facebook-box"></span> <span class="sr-only">Follow us on Facebook</span></a>
+						<a href="javascript:;"><span class="zmdi zmdi-youtube-play"></span> <span class="sr-only">Follow us on YouTube</span></a>
+					</div>
+				</div>
+				<ul class="footer-nav">
+					<li>
+						&copy; 2017 Redrow. All rights reserved
+					</li>
+					<li>
+						<a href="javascript:;">Glossary</a>
+					</li>
+					<li>
+						<a href="javascript:;">Terms and conditions</a>
+					</li>
+					<li>
+						<a href="javascript:;">Sitemap</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="scripts/libs/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="scripts/libs/slick.js"></script>
+	<script type="text/javascript" src="scripts/libs/jquery.dotdotdot.min.js"></script>
+	<asp:ContentPlaceHolder ID="cphAdditionalFooter" runat="server" />
+	<script type="text/javascript" src="scripts/functions.js"></script>
+	<script type="text/javascript" src="scripts/default.js"></script>
+</body>
+</html>

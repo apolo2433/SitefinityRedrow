@@ -1,0 +1,42 @@
+//----------  layout
+//------------------------------------------------------------------------------
+html, body {
+	@include font-smoothing(antialiased);
+	height: 100%;
+}
+
+body {
+	background: $white;
+	color: $grey-dark;
+	font-family: $font-default;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+.container {
+	@include base-float;
+	overflow: hidden;
+	@media only screen and (max-width: 319px) {
+		width: 320px;
+	}
+}
+
+.content {
+	@include base-float;
+	@include breakpoint(desktop) {
+		min-height: calc(100% - 172px);
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1210px;
+	padding: 0 20px;
+	width: 100%;
+	@include breakpoint(tablet) {
+		padding: 0 35px;
+	}
+	@include breakpoint(phone) {
+		padding: 0 20px;
+	}
+}

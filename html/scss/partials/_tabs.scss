@@ -1,0 +1,94 @@
+//----------  tabs
+//------------------------------------------------------------------------------
+.tabs-container {
+	@include base-float;
+	margin-top: 8px;
+	.tabs-list {
+		@include base-float;
+		border: 1px solid #efefef;
+		display: flex;
+	}
+	.tab-item {
+		border-right: 1px solid #efefef;
+		display: flex;
+		flex: 2;
+		&:last-child {
+			border-right: 0;
+		}
+	}
+	.tab-link {
+		@include base-float;
+		color: $grey;
+		font-size: 12px;
+		font-weight: $semi;
+		letter-spacing: 1px;
+		min-height: 50px;
+		padding: 5px;
+		text-transform: uppercase;
+		transition: background .3s ease, color .3s ease;
+		&.selected,
+		&:hover {
+			background: $grey-lighter;
+			color: $red;
+		}
+	}
+	.tab-heading {
+		display: none;
+	}
+	.tab-content {
+		@include base-float;
+		display: none;
+	}
+	.tab-indented-content {
+		@include base-float;
+		padding-left: 11.5%;
+	}
+	@include breakpoint(tablet) {
+		margin-left: -35px;
+		margin-top: 45px;
+		width: calc(100% + 70px);
+		.tab-indented-content {
+			padding: 0 35px 0 13%;
+		}
+	}
+	@include breakpoint(phone) {
+		border: 1px solid $grey-light;
+		border-bottom: 0;
+		.tabs-list {
+			display: none;
+		}
+		.tab-heading {
+			@include base-float;
+			border-bottom: 1px solid $grey-light;
+			color: $grey;
+			display: block;
+			font-size: 18px;
+			font-weight: $bold;
+			padding: 22px 45px 25px 25px;
+			position: relative;
+			&::after {
+				@include icon-font;
+				color: $red;
+				content: '\f278';
+				font-size: 35px;
+				position: absolute;
+				right: 18px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&.selected {
+				border-color: transparent;
+				&::after {
+					content: '\f273';
+				}
+			}
+		}
+		.tab-content {
+			border-bottom: 1px solid $grey-light;
+			padding: 0 9px;
+		}
+		.tab-indented-content {
+			padding-left: 0;
+		}
+	}
+}

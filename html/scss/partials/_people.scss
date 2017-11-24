@@ -1,0 +1,206 @@
+//----------  people
+//------------------------------------------------------------------------------
+.people-wrap {
+	@include base-float;
+	padding-top: 16px;
+	.people-box {
+		float: left;
+		margin-bottom: 31px;
+		margin-right: 3%;
+		width: 48.5%;
+		&:nth-child(2n) {
+			margin-right: 0;
+			.bio-wrap {
+				float: right;
+			}
+		}
+		&:nth-child(2n+1) {
+			clear: left;
+		}
+	}
+	.image-holder {
+		@include base-float;
+		img {
+			width: 100%;
+		}
+	}
+	.text-holder {
+		@include base-float;
+		border: 1px solid #dedede;
+		padding: 29px 42px 33px 26px;
+		position: relative;
+		span {
+			display: block;
+			letter-spacing: .8px;
+			line-height: 26px;
+			text-transform: uppercase;
+		}
+		.name {
+			color: $red;
+			font-size: 21px;
+			font-weight: $semi;
+			margin-bottom: 5px;
+			position: relative;
+			&::after {
+				@include icon-font;
+				color: $grey-dark;
+				content: '\f2fe';
+				display: inline-block;
+				font-size: 25px;
+				position: absolute;
+				right: -18px;
+				top: 0;
+				transition: transform .3s ease;
+			}
+		}
+		.position {
+			font-size: 18px;
+		}
+	}
+	.bio-wrap {
+		background: $white;
+		box-shadow: 0 7px 20px rgba(38, 50, 56, .15);
+		display: none;
+		float: left;
+		margin-top: 30px;
+		padding: 24px 30px 32px;
+		position: relative;
+		width: 206.1%;
+		.left {
+			float: left;
+			padding-top: 2px;
+			width: 30%;
+		}
+		.side-item {
+			@include base-float;
+			margin-bottom: 13px;
+			h4 {
+				font-size: 18px;
+				font-weight: $semi;
+				line-height: 1.3;
+				margin-bottom: 8px;
+			}
+			&.red-item {
+				h4 {
+					color: $red;
+				}
+				.square {
+					background: $red;
+				}
+			}
+			.label {
+				display: block;
+				margin-bottom: 3px;
+				padding: 4px 0 5px 31px;
+				position: relative;
+			}
+			.square {
+				background: $grey-dark;
+				display: inline-block;
+				height: 25px;
+				left: 0;
+				position: absolute;
+				top: 0;
+				text-align: center;
+				width: 25px;
+				span {
+					color: $white;
+					line-height: 25px;
+				}
+				img {
+					width: 100%;
+				}
+			}
+			.zmdi {
+				font-size: 16px;
+			}
+			.letter {
+				font-size: 13px;
+				font-weight: $semi;
+				text-transform: uppercase;
+			}
+		}
+		.right {
+			float: right;
+			width: 67%;
+			.rte-content h2 {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.open {
+		.text-holder {
+			border-color: $white;
+			box-shadow: 0 7px 20px rgba(38, 50, 56, .15);
+			&::before {
+				background: $white;
+				box-shadow: 0 7px 20px rgba(38, 50, 56, .15);
+				content: '';
+				display: inline-block;
+				height: 30px;
+				left: -1px;
+				position: absolute;
+				right: -1px;
+				top: 100%;
+			}
+			&::after {
+				background: $white;
+				content: '';
+				height: 50px;
+				left: -1px;
+				position: absolute;
+				right: -1px;
+				top: calc(100% - 17px);
+				z-index: 5;
+			}
+			.name::after {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 0 0 33px;
+		.text-holder {
+			padding: 18px 33px 33px 22px;
+		}
+		.bio-wrap {
+			padding: 25px 26px 15px;
+			.left {
+				width: 40%;
+			}
+			.right {
+				width: 57.5%;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 18px 0 14px;
+		.people-box {
+			margin-bottom: 20px;
+			margin-right: 0;
+			width: 100%;
+		}
+		.text-holder {
+			padding: 17px 34px 33px 21px;
+		}
+		.bio-wrap {
+			margin-top: 0;
+			padding: 0 26px 32px;
+			width: 100%;
+			.left,
+			.right {
+				width: 100%;
+			}
+		}
+		.open .text-holder {
+			&::before {
+				display: none;
+			}
+			&::after {
+				bottom: -2px;
+				height: 15px;
+				top: auto;
+			}
+		}
+	}
+}

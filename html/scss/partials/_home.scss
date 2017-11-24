@@ -1,0 +1,96 @@
+//----------  home page
+//------------------------------------------------------------------------------
+.home-content {
+	@include base-float;
+	padding: 95px 0;
+	@include breakpoint(tablet) {
+		padding: 50px 0 60px;
+	}
+	@include breakpoint(phone) {
+		padding: 42px 0 0;
+	}
+}
+
+.home-boxes-wrap {
+	@include base-float;
+	margin-bottom: 27px;
+	.home-box {
+		background: $white;
+		float: left;
+		margin-bottom: 42px;
+		margin-right: 2.6%;
+		width: 31.6%;
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+	a {
+		@include base-float;
+		overflow: hidden;
+		&:hover {
+			.image-holder {
+				opacity: .7;
+				transform: scale(1.05);
+			}
+		}
+	}
+	.box-title {
+		align-items: center;
+		background: $red;
+		color: $white;
+		display: flex;
+		font-size: 21px;
+		min-height: 60px;
+		letter-spacing: 1px;
+		padding: 5px 40px 5px 20px;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 2;
+		&::after {
+			@include icon-font;
+			content: '\f301';
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	.image-holder {
+		@include base-float;
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 0;
+		padding-bottom: 75.8%;
+		position: relative;
+		transition: opacity .3s ease, transform .3s ease;
+		z-index: 1;
+	}
+	@include breakpoint(touch) {
+		.box-title {
+			min-height: 80px;
+		}
+	}
+	@include breakpoint(tablet) {
+		margin-bottom: 44px;
+		.home-box {
+			margin-bottom: 18px;
+			margin-right: 2.8%;
+			width: 48.6%;
+			&:nth-child(3n) {
+				margin-right: 2.8%;
+			}
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		margin-bottom: 98px;
+		.home-box {
+			margin-bottom: 19px;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+}

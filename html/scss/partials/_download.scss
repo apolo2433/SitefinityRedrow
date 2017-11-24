@@ -1,0 +1,288 @@
+//----------  downloads
+//------------------------------------------------------------------------------
+.download-box {
+	@include base-float;
+	overflow: hidden;
+	position: relative;
+	img {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -42%);
+		width: 114%;
+		z-index: 1;
+	}
+	.download-content {
+		@include base-float;
+		color: $white;
+		padding: 44px 51px 52px;
+		position: relative;
+		z-index: 2;
+	}
+	h3 {
+		display: none;
+		font-size: 16px;
+		letter-spacing: 1px;
+		margin-bottom: 23px;
+		text-transform: uppercase;
+	}
+	h2 {
+		font-size: 45px;
+		font-weight: $light;
+		margin-bottom: 28px;
+	}
+	a {
+		float: left;
+		clear: both;
+		font-size: 20px;
+		margin-left: 3px;
+		b {
+			font-weight: $regular;
+			text-decoration: underline;
+		}
+		span {
+			font-size: 12px;
+			font-weight: $light;
+			letter-spacing: 1px;
+		}
+		&::before {
+			@include icon-font;
+			content: '\f220';
+			margin: -4px 9px 0 0;
+			vertical-align: middle;
+		}
+		&:hover b {
+			text-decoration: none;
+		}
+	}
+	@include breakpoint(tablet) {
+		img {
+			transform: translate(-42%, -42%);
+			width: 154%;
+		}
+		.download-content {
+			padding: 38px 41px 27px;
+		}
+		h3 {
+			display: block;
+		}
+		h2 {
+			font-size: 38px;
+			margin-bottom: 24px;
+		}
+	}
+	@include breakpoint(phone) {
+		margin-left: -20px;
+		width: calc(100% + 40px);
+		img {
+			transform: translate(-59%, -37%);
+			width: 204%;
+		}
+		.download-content {
+			min-height: 445px;
+			padding: 35px 15px 35px 27px;
+		}
+		h3 {
+			display: block;
+			margin-bottom: 9px;
+		}
+		h2 {
+			font-size: 30px;
+			letter-spacing: 1px;
+			margin-bottom: 17px;
+		}
+		a {
+			margin-left: 0;
+		}
+	}
+}
+
+.download-page {
+	@include base-float;
+	padding: 57px 0 163px;
+	.download-box {
+		margin-bottom: 54px;
+		.download-content {
+			padding: 40px 51px 39px;
+		}
+		h2 {
+			margin-bottom: 17px;
+		}
+		a {
+			margin-bottom: 6px;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 43px 0 193px;
+		.download-box {
+			.download-content {
+				padding: 36px 39px 63px;
+			}
+			h3 {
+				display: none;
+			}
+			h2 {
+				font-size: 45px;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 31px 0 172px;
+		.download-box {
+			margin-bottom: 57px;
+			margin-left: 0;
+			width: 100%;
+			.download-content {
+				padding: 44px 27px 39px;
+			}
+			img {
+				transform: translate(-59%, -33%);
+				width: 244%;
+			}
+			h3 {
+				display: none;
+			}
+			h2 {
+				letter-spacing: 0;
+			}
+			a span {
+				display: none;
+			}
+		}
+	}
+}
+
+.download-holder {
+	@include base-float;
+	.col {
+		float: left;
+		margin: 45px 0 50px;
+		width: 48.7%;
+		&:nth-child(2n) {
+			float: right;
+		}
+		&:nth-child(2n+1) {
+			clear: left;
+		}
+	}
+	h3 {
+		border-bottom: 1px solid #efefef;
+		color: $red;
+		font-size: 18px;
+		font-weight: $semi;
+		letter-spacing: 1px;
+		line-height: 1.3;
+		margin-bottom: 27px;
+		padding-bottom: 15px;
+		text-transform: uppercase;
+	}
+	.checkbox-list {
+		@include base-float;
+	}
+	.checkbox-wrap {
+		margin-bottom: 7px;
+	}
+	.form-footer {
+		@include base-float;
+		margin-top: 6px;
+		text-align: center;
+	}
+	@include breakpoint(touch) {
+		h3 {
+			border-color: $grey-dark;
+		}
+		.form-footer {
+			position: relative;
+			&::before {
+				background: $grey-dark;
+				content: '';
+				display: inline-block;
+				height: 1px;
+				position: absolute;
+				top: -32px;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		.col {
+			margin: 41px 0 57px;
+			padding: 0 8.5%;
+			width: 100%;
+		}
+		.form-footer {
+			padding: 0 8.5%;
+			text-align: right;
+			&::before {
+				left: 8.5%;
+				right: 8.5%;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		.col {
+			margin: 45px 0 53px;
+			width: 100%;
+		}
+		.form-footer {
+			margin-top: 10px;
+			&::before {
+				left: 0;
+				right: 0;
+			}
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}
+
+//----------  custom checkbox
+//------------------------------------------------------------------------------
+.checkbox-wrap {
+	@include base-float;
+	position: relative;
+	input {
+		height: 1px;
+		left: 2px;
+		position: absolute;
+		top: 2px;
+		width: 1px;
+		&:checked + label {
+			&::before {
+				background: $red;
+			}
+			&::after {
+				display: block;
+			}
+		}
+	}
+	label {
+		@include base-float;
+		background: $white;
+		color: $grey-dark;
+		font-size: 18px;
+		line-height: 1.3;
+		padding: 5px 10px 5px 50px;
+		position: relative;
+		&::before {
+			background: $grey-lighter;
+			content: '';
+			height: 30px;
+			left: 0;
+			position: absolute;
+			top: 3px;
+			transition: background .3s ease;
+			width: 30px;
+		}
+		&::after {
+			@include icon-font;
+			color: $white;
+			content: '\f26b';
+			display: none;
+			font-size: 16px;
+			left: 10px;
+			position: absolute;
+			top: 10px;
+		}
+	}
+}

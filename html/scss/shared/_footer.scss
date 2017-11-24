@@ -1,0 +1,104 @@
+//----------  footer
+//------------------------------------------------------------------------------
+.footer {
+	@include base-float;
+	background: $grey-lighter;
+	padding: 26px 0 30px;
+	.footer-links {
+		float: right;
+	}
+	.footer-social {
+		display: inline-block;
+		margin-left: 50px;
+		padding: 0 5px 0 24px;
+		position: relative;
+		&::before {
+			background: $grey;
+			content: '';
+			display: inline-block;
+			height: 13px;
+			left: 0;
+			position: absolute;
+			top: 3px;
+			width: 1px;
+		}
+		a {
+			color: $grey;
+			display: inline-block;
+			font-size: 20px;
+			margin-left: 28px;
+			vertical-align: middle;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:hover {
+				color: $red;
+			}
+		}
+		.zmdi-youtube-play {
+			font-size: 23px;
+		}
+	}
+	.footer-nav {
+		float: left;
+		padding: 1px 0 0 8px;
+		li {
+			float: left;
+			font-size: 16px;
+			margin-right: 8px;
+			&::after {
+				content: '|';
+				margin-left: 4px;
+			}
+			&:last-child {
+				margin-right: 0;
+				&::after {
+					display: none;
+				}
+			}
+		}
+		a {
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+	@include breakpoint(desktop-small) {
+		.footer-social {
+			margin-left: 20px;
+			a {
+				margin-left: 20px;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 28px 0 33px;
+		.footer-links {
+			float: left;
+			margin-bottom: 13px;
+			padding: 0 0 0 9px;
+		}
+		.footer-social {
+			margin-left: 18px;
+		}
+		.footer-nav li::after {
+			margin-left: 5px;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 28px 0 43px;
+		.footer-links {
+			float: left;
+			margin-bottom: 17px;
+			padding: 0 0 0 9px;
+		}
+		.footer-social {
+			@include base-float;
+			margin: 10px 0 0;
+			padding: 0;
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

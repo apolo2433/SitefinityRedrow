@@ -1,0 +1,49 @@
+//----------  breadcrumb
+//------------------------------------------------------------------------------
+.breadcrumb {
+	@include base-float;
+	background: $grey-lighter;
+	padding: 18px 0 20px;
+	ul {
+		@include base-float;
+		li {
+			color: $grey-dark;
+			float: left;
+			letter-spacing: 1.3px;
+			margin-right: 11px;
+			padding-right: 23px;
+			text-transform: uppercase;
+			&:last-child::after {
+				display: none;
+			}
+		}
+		a {
+			position: relative;
+			&::after {
+				@include icon-font;
+				content: '\f301';
+				position: absolute;
+				right: -23px;
+				top: 0;
+			}
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 20px 0 21px;
+		ul {
+			li {
+				font-size: 11px;
+				margin-right: 10px;
+				padding-right: 16px;
+			}
+			a {
+				&::after {
+					right: -16px;
+				}
+			}
+		}
+	}
+}

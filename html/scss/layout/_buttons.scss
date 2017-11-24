@@ -1,0 +1,45 @@
+//----------  button
+//------------------------------------------------------------------------------
+// button reset
+button {
+	appearance: none;
+	border: 0;
+	box-shadow: none;
+	background-color: transparent;
+	color: inherit;
+	outline: 0;
+	display: inline-block;
+	padding: 0;
+}
+.btn {
+	color: $white;
+	background: $red;
+	border: 1px solid $red;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: $bold;
+	letter-spacing: 1px;
+	padding: 22px 30px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: .5s ease;
+	&:hover {
+		background: $white;
+		color: $red;
+	}
+}
+
+.link-external {
+	color: $grey-dark;
+	font-size: 16px;
+	font-weight: $semi;
+	letter-spacing: 1px;
+	&::before {
+		@include icon-font;
+		content: '\f1a3';
+		margin-right: 8px;
+	}
+	&:hover {
+		color: $red;
+	}
+}

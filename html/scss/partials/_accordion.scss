@@ -1,0 +1,64 @@
+.accordion {
+	@include base-float;
+	border: 1px solid $grey-light;
+	.acc-item {
+		@include base-float;
+		border-bottom: 1px solid $grey-light;
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+	.acc-head {
+		@include base-float;
+		color: $grey;
+		font-size: 18px;
+		font-weight: $bold;
+		letter-spacing: -.6px;
+		padding: 21px 50px 26px 26px;
+		position: relative;
+		text-align: left;
+		transition: color .3s ease;
+		&::after {
+			@include icon-font;
+			color: $red;
+			content: '\f278';
+			font-size: 35px;
+			position: absolute;
+			right: 28px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&.open {
+			color: $grey-dark;
+			&::after {
+				content: '\f273';
+			}
+		}
+		&:hover {
+			color: $grey-dark;
+		}
+	}
+	.acc-content {
+		@include base-float;
+		display: none;
+		padding: 7px 27px 14px;
+	}
+	@include breakpoint(tablet) {
+		.acc-head::after {
+			right: 20px;
+		}
+	}
+	@include breakpoint(phone) {
+		.acc-head::after {
+			right: 19px;
+			top: 46%;
+		}
+		.rte-content p {
+			font-size: 18px;
+			line-height: 26px;
+		}
+		.acc-content {
+			padding: 13px 25px 7px;
+		}
+	}
+}

@@ -1,0 +1,397 @@
+//----------  header
+//------------------------------------------------------------------------------
+.header {
+	@include base-float;
+	background: $white;
+	border-bottom: 1px solid $grey-light;
+	height: 90px;
+	position: relative;
+	.logo {
+		float: left;
+		margin-top: 30px;
+		width: 157px;
+		img {
+			width: 100%;
+		}
+	}
+	.header-right {
+		float: right;
+		&.search-open {
+			position: relative;
+		}
+	}
+	.header-actions {
+		float: left;
+		margin-left: 11px;
+		li {
+			float: left;
+			margin-left: 16px;
+		}
+		a, button {
+			color: $red;
+			float: left;
+			font-size: 19px;
+			padding: 35px 2px 28px;
+			transition: opacity .3s ease;
+			&:hover {
+				opacity: .7;
+			}
+		}
+		.share-item {
+			position: relative;
+		}
+		.share-wrap {
+			background: $white;
+			box-shadow: 0 10px 20px rgba(38, 50, 56, .15);
+			display: none;
+			left: -50%;
+			margin: 1px 0 0 -30px;
+			padding: 7px 0 4px;
+			position: absolute;
+			text-align: center;
+			top: 100%;
+			width: 110px;
+			a {
+				display: inline-block;
+				float: none;
+				margin: 0 7px;
+				padding: 0;
+			}
+		}
+	}
+	.menu-trigger {
+		color: $red;
+		display: none;
+		font-size: 18px;
+		left: 35px;
+		position: absolute;
+		top: 34px;
+		width: 30px;
+		&::before {
+			@include font-styles;
+			content: font-char(ico-nav);
+		}
+		&.open {
+			text-align: center;
+			&::before {
+				content: font-char(ico-close);
+			}
+		}
+	}
+	@include breakpoint(desktop-small) {
+		.header-actions {
+			li {
+				margin-left: 14px;
+			}
+		}
+	}
+	@include breakpoint(touch) {
+		text-align: center;
+		.menu-trigger {
+			display: block;
+		}
+		.logo {
+			display: inline-block;
+			float: none;
+			margin-top: 26px;
+		}
+		.header-right {
+			position: absolute;
+			top: 0;
+		}
+		.header-actions {
+			li {
+				margin-left: 0;
+			}
+			.search-item {
+				display: none;
+			}
+			a, button {
+				padding: 34px 10px 30px;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		.header-right {
+			right: 74px;
+		}
+		.header-actions .share-wrap {
+			margin: 0 0 0 -15px;
+		}
+	}
+	@include breakpoint(phone) {
+		.menu-trigger {
+			left: 20px;
+		}
+		.header-right {
+			right: 12px;
+		}
+		.header-actions .share-wrap {
+			margin: 0;
+			left: auto;
+			right: 0;
+		}
+	}
+	@include breakpoint(phone-small) {
+		.logo {
+			margin-top: 32px;
+			width: 130px;
+		}
+		.header-actions {
+			a, button {
+				padding: 34px 7px 30px;
+			}
+		}
+	}
+}
+
+//----------  desktop navigation
+//------------------------------------------------------------------------------
+.desktop-nav {
+	float: left;
+	.nav-first-level {
+		float: left;
+		li {
+			float: left;
+			margin-left: 32px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		.open > a {
+			color: $red;
+			&::after {
+				width: 100%;
+			}
+		}
+		a {
+			color: $grey-dark;
+			display: inline-block;
+			font-size: 12px;
+			font-weight: $semi;
+			letter-spacing: 1px;
+			padding: 39px 0 36px;
+			position: relative;
+			text-transform: uppercase;
+			&::after {
+				background: $red;
+				bottom: -1px;
+				content: '';
+				display: inline-block;
+				height: 2px;
+				left: 0;
+				position: absolute;
+				transition: width .3s ease;
+				width: 0;
+				z-index: 21;
+			}
+			&:hover,
+			&.active {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.nav-dropdown {
+		display: none;
+		left: 0;
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		z-index: 20;
+		.nav-inner {
+			@include base-float;
+			background: $white;
+			box-shadow: 0 10px 20px rgba(38, 50, 56, .15);
+			padding: 42px 32px 34px;
+		}
+		.col {
+			float: left;
+			margin-right: 4%;
+			padding-top: 12px;
+			width: 17.7%;
+			&.col-image {
+				margin-right: 5.3%;
+				padding-top: 0;
+				width: 20.073%;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		img {
+			width: 100%;
+		}
+		ul {
+			li {
+				margin: 0 0 32px;
+				&:last-child {
+					margin: 0;
+				}
+			}
+			a {
+				font-size: 16px;
+				font-weight: $regular;
+				letter-spacing: 0;
+				padding: 0 0 0 17px;
+				position: relative;
+				text-transform: none;
+				&::after {
+					display: none;
+				}
+				&::before {
+					@include icon-font;
+					color: $red;
+					content: '\f301';
+					left: 0;
+					position: absolute;
+					top: 0;
+				}
+				&:hover {
+					color: $red;
+					font-weight: $semi;
+				}
+			}
+		}
+	}
+	@include breakpoint(desktop-small) {
+		.nav-first-level > li {
+			margin-left: 22px;
+			> a {
+				letter-spacing: .3px;
+			}
+		}
+		.nav-dropdown {
+			.col {
+				width: 21.7%;
+				&.col-image {
+					margin-right: 4%;
+					width: 20%;
+				}
+			}
+		}
+	}
+	@include breakpoint(touch) {
+		display: none;
+	}
+}
+
+//----------  desktop search
+//------------------------------------------------------------------------------
+.desktop-search-wrap {
+	background: $white;
+	bottom: 0;
+	display: none;
+	left: -26px;
+	padding: 25px 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	.search-input-holder {
+		float: left;
+		position: relative;
+		width: calc(100% - 50px);
+		input {
+			width: 100%;
+		}
+		button {
+			color: $red;
+			font-size: 20px;
+			position: absolute;
+			right: 11px;
+			top: 10px;
+		}
+	}
+	.close-search {
+		color: $red;
+		font-size: 22px;
+		float: right;
+		padding: 8px 0 4px;
+	}
+}
+
+//----------  device navigation
+//------------------------------------------------------------------------------
+.device-nav {
+	display: none;
+	height: calc(100vh - 90px);
+	left: 0;
+	overflow: auto;
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	width: 100%;
+	z-index: 100;
+	ul {
+		@include base-float;
+		background: $red;
+		li {
+			@include base-float;
+			position: relative;
+		}
+		a {
+			@include base-float;
+			color: $white;
+			border-bottom: 1px solid #e26375;
+			font-size: 18px;
+			padding: 22px 60px 25px 23px;
+		}
+		ul {
+			background: $white;
+			display: none;
+			padding: 11px 0 19px;
+			a {
+				border-bottom: 0;
+				color: $grey-dark;
+				font-size: 15px;
+				padding: 10px 37px;
+				position: relative;
+				&::before {
+					@include icon-font;
+					color: $red;
+					content: '\f301';
+					left: 22px;
+					position: absolute;
+					top: 10px;
+				}
+			}
+		}
+	}
+	.nav-arrow {
+		color: $white;
+		display: none;
+		font-size: 20px;
+		padding: 10px 15px;
+		position: absolute;
+		right: 18px;
+		top: 14px;
+	}
+}
+
+//----------  device search
+//------------------------------------------------------------------------------
+.device-search {
+	@include base-float;
+	background: $red;
+	padding: 22px 25px 25px;
+	position: relative;
+	input {
+		@include base-float;
+		@include placeholder {
+			color: $white;
+		}
+		background: rgba(255, 255, 255, .15);
+		color: $white;
+		padding: 0 40px 0 11px;
+	}
+	button {
+		color: $white;
+		font-size: 24px;
+		height: 40px;
+		position: absolute;
+		right: 25px;
+		top: 22px;
+		width: 40px;
+	}
+}
