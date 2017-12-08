@@ -1081,9 +1081,11 @@
     <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-3+9.html" />
     <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-4+4+4.html" />
     <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-4+8.html" />
+    <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-7+5.html" />
     <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-6+6.html" />
     <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-8+4.html" />
     <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\grid-9+3.html" />
+    <Content Include="ResourcePackages\Bootstrap\GridSystem\Templates\section.html" />
     <Content Include="ResourcePackages\Bootstrap\gruntfile.js" />
     <Content Include="ResourcePackages\Bootstrap\MVC\Scripts\Navigation\pills.js" />
     <Content Include="Silverlight.js" />
@@ -1221,7 +1223,6 @@
     </Content>
     <Content Include="OpenAccessNuGet.targets" />
     <Content Include="App_Data\Sitefinity\Configuration\AuthenticationConfig.config" />
-    <Content Include="App_Data\Sitefinity\Configuration\DataConfig.config" />
     <Content Include="App_Data\Sitefinity\Configuration\PersonalizationConfig.config" />
     <Content Include="App_Data\Sitefinity\Configuration\ProjectConfig.config" />
     <Content Include="App_Data\Sitefinity\Configuration\SecurityConfig.config" />
@@ -1374,6 +1375,8 @@
     <Content Include="ResourcePackages\Bootstrap\assets\dist\fonts\bootstrap\glyphicons-halflings-regular.woff" />
     <Content Include="ResourcePackages\Bootstrap\assets\dist\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <Content Include="ResourcePackages\Bootstrap\assets\dist\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="ResourcePackages\Bootstrap\MVC\Views\Layouts\_Layout.cshtml" />
+    <Content Include="App_Data\Sitefinity\Configuration\DataConfig.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="OpenAccessNuget.targets" />
